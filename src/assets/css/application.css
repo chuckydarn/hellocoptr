@@ -1,0 +1,192 @@
+:root {
+  --yellow: #feca01;
+  --orange: #f87f01;
+  --dark-blue: #212931;
+  --med-blue: #435969;
+  --light-blue: #e7f0ed;
+
+  --ease-in-out: all 0.1s ease-in-out;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+button,
+a {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-blue);
+}
+
+.logo {
+  display: inline-block;
+  font-family: 'Sacramento', cursive;
+  color: var(--yellow);
+  font-size: 50px;
+  letter-spacing: 1.5px;
+}
+
+#alert {
+  border-radius: 4px;
+  background-color: #db3236;
+  width: 100%;
+  color: white;
+  text-align: left;
+  font-size: 14px;
+  padding: 12px;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+#alert .alert-title {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#alert ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#alert .close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+}
+
+.sidebar {
+  background-color: var(--med-blue);
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar h2 {
+  color: var(--light-blue);
+}
+
+.main-content {
+  background-color: var(--light-blue);
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-title {
+  max-width: 400px;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.text-input {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.text-input input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(33, 41, 49, 0.08);
+  padding: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  transition: var(--ease-in-out);
+  box-sizing: border-box;
+}
+
+.text-input input:hover {
+  box-shadow: 0 8px 28px rgba(33, 41, 49, 0.14);
+}
+
+.text-input label {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  left: 12px;
+  top: 15px;
+  transition: var(--ease-in-out);
+}
+
+.text-input input:focus,
+.text-input input:valid {
+  padding: 18px 12px 6px 12px;
+}
+
+.text-input input:focus {
+  outline: none;
+}
+
+.text-input input:focus + label,
+.text-input input:valid + label {
+  font-size: 10px;
+  transform: translateY(-90%);
+}
+
+.text-input input:focus + label {
+  color: var(--orange);
+}
+
+.text-input small {
+  margin-left: 12px;
+  margin-top: 4px;
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.button {
+  border-radius: 4px;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  background-color: var(--light-blue);
+  display: inline-block;
+  padding: 0 24px;
+  font-size: 16px;
+  transition: var(--ease-in-out);
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(33, 41, 49, 0.14);
+}
+
+.button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 20px rgba(33, 41, 49, 0.18);
+  outline: none;
+}
+
+.button-primary {
+  background-color: var(--yellow);
+}
+
+.signup-submit {
+  margin-top: 12px;
+}

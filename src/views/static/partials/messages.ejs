@@ -1,0 +1,17 @@
+<% if(messages.error || messages.notice) { %>
+  <div role="alert" id="alert">
+    <button class="close-button" onClick="document.getElementById('alert').style.display='none'">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <% if(messages.error) { %>
+      <span class="alert-title">Whoopsie, please check your errors below</span>
+      <ul>
+        <% messages.error.forEach((err) => { %>
+          <li><%= `${err.param} ${err.msg}` %></li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p><%= messages.notice %></p>
+    <% } %>
+  </div>
+<% } %>
