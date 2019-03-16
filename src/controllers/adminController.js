@@ -1,5 +1,9 @@
 module.exports = {
   index(req, res, next) {
-    res.render("admin/dashboard");
+    if(!res.user) {
+      res.redirect("/admin/users/sign_in");
+    } else {
+      res.render("admin/dashboard");
+    }
   }
 }

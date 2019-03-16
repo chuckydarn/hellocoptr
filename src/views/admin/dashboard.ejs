@@ -4,20 +4,20 @@
     <% include ../static/partials/head.ejs %>
   </head>
   <body>
+      <% include ../static/partials/navbar.ejs %>
 
-    <% include ../static/partials/navbar.ejs %>
+      <main>
+        <h1>hellocoptr dashboard landing page goes here</h1>
+        <p>
+          First name: <%= currentUser.firstName %>
+        </p>
+        <p>
+          Last name: <%= currentUser.lastName %>
+        </p>
+        <p>
+          Email: <%= currentUser.email %>
+        </p>
+      </main>
 
-    <main>
-      <h1>hellocoptr dashboard landing page goes here</h1>
-      <p>
-        First name: <%= currentUser.firstName %>
-      </p>
-      <p>
-        Last name: <%= currentUser.lastName %>
-      </p>
-      <p>
-        Email: <%= currentUser.email %>
-      </p>
-    </main>
   </body>
 </html>
