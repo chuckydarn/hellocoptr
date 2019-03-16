@@ -80,6 +80,7 @@ a {
 
 .sidebar h2 {
   color: var(--light-blue);
+  width: 90%;
 }
 
 .main-content {

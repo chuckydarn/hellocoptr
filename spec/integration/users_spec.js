@@ -20,7 +20,7 @@ describe("routes : users", () => {
     it("should render a view with a sign up form", (done) => {
       request.get(`${base}sign_up`, (err, res, body) => {
         expect(err).toBeNull();
-        expect(body).toContain("Sign up");
+        expect(body).toContain("sign up");
         done();
       });
     });
@@ -79,6 +79,16 @@ describe("routes : users", () => {
           });
         }
       );
+    });
+  });
+
+  describe("GET /admin/users/sign_in", () => {
+    it("should render a view with a sign in form", (done) => {
+      request.get(`${base}sign_in`, (err, res, body) => {
+        expect(err).toBeNull();
+        expect(body).toContain("sign in");
+        done();
+      });
     });
   });
 });

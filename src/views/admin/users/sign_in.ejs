@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../static/partials/head.ejs %>
+  </head>
+  <body>
+
+    <main class="main-container">
+      <div class="main-content">
+
+        <h1 class="signup-title">Hi, nice to see you again</h1>
+
+        <form action="/admin/users/sign_in" method="post" class="signup-form">
+
+          <% include ../../static/partials/messages.ejs %>
+
+          <div class="text-input">
+            <input type="email" name="email" id="email" required>
+            <label for="email">email</label>
+          </div>
+
+          <div class="text-input">
+            <input type="password" name="password" id="password" required>
+            <label for="password">password</label>
+          </div>
+
+          <button type="submit" class="button button-primary signup-submit">sign in</button>
+        </form>
+      </div>
+
+      <div class="sidebar">
+        <div class="logo">hellocoptr</div>
+        <h2>We actually haven't met before</h2>
+        <a class="button button-secondary" href="/admin/users/sign_up">sign up</a>
+      </div>
+    </main>
+
+  </body>
+</html>
