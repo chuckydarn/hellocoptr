@@ -31,6 +31,8 @@ a {
   letter-spacing: 1.5px;
 }
 
+/* Alert */
+
 #alert {
   border-radius: 4px;
   background-color: #db3236;
@@ -63,11 +65,56 @@ a {
   right: 12px;
 }
 
+/* End alert */
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--med-blue);
+  padding: 0 24px;
+  height: 85px;
+}
+
+.nav-items {
+  display: flex;
+  color: white;
+  list-style: none;
+}
+
+.nav-items li {
+  padding-left: 12px;
+}
+
+.nav-items a:hover {
+  color: var(--orange);
+}
+
+.nav-items a {
+  color: white;
+  padding: 12px 0;
+}
+
+/* End Navbar */
+
 .main-container {
   display: flex;
   height: 100vh;
   text-align: center;
 }
+
+.main-content {
+  background-color: var(--light-blue);
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Signup and Signin */
 
 .sidebar {
   background-color: var(--med-blue);
@@ -83,18 +130,13 @@ a {
   width: 90%;
 }
 
-.main-content {
-  background-color: var(--light-blue);
-  width: 75vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .signup-title {
   max-width: 400px;
 }
+
+/* End signup and signin */
+
+/* Forms */
 
 .signup-form {
   width: 100%;
@@ -160,6 +202,54 @@ a {
   color: rgba(0, 0, 0, 0.6);
 }
 
+/* End forms */
+
+/* Dashboard */
+
+.dashboard {
+  height: 100vh;
+  background-color: var(--light-blue);
+}
+
+.dashboard-content {
+  text-align: center;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard-links {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 70vw;
+  flex-wrap: wrap;
+}
+
+.dashboard-links a {
+  border-radius: 4px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow);
+  margin: 24px 24px 0 24px;
+  box-sizing: border-box;
+  font-size: 20px;
+  box-shadow: 0 8px 28px rgba(33, 41, 49, 0.14);
+}
+
+.dashboard-links a:hover {
+  background-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+/* End dashboard */
+
+/* Buttons */
+
 .button {
   border-radius: 4px;
   border: none;
@@ -191,3 +281,5 @@ a {
 .signup-submit {
   margin-top: 12px;
 }
+
+/* End Buttons */

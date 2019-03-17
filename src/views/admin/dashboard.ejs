@@ -3,20 +3,17 @@
   <head>
     <% include ../static/partials/head.ejs %>
   </head>
-  <body>
+  <body class="dashboard">
       <% include ../static/partials/navbar.ejs %>
 
-      <main>
-        <h1>hellocoptr dashboard landing page goes here</h1>
-        <p>
-          First name: <%= currentUser.firstName %>
-        </p>
-        <p>
-          Last name: <%= currentUser.lastName %>
-        </p>
-        <p>
-          Email: <%= currentUser.email %>
-        </p>
+      <main class="dashboard-content">
+        <h1>Hi again, <%= currentUser.firstName %></h1>
+        <h2>Who would you like to check out today?</h2>
+        <div class="dashboard-links">
+          <a href="#">company</a>
+          <a href="#">employees</a>
+          <a href="#">visitors</a>
+        </div>
       </main>
 
   </body>
