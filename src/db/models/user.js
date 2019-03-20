@@ -20,9 +20,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    companyId: {
+      type: DataTypes.INTEGER
+    }
   }, {});
   User.associate = function(models) {
     // associations can be defined here
+    User.belongsTo(models.Company, {
+     foreignKey: "companyId",
+     onDelete: "CASCADE"
+   });
   };
   return User;
 };

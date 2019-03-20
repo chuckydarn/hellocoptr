@@ -1,5 +1,6 @@
 const sequelize = require('../../src/db/models/index').sequelize;
 const User = require('../../src/db/models').User;
+const Company = require('../../src/db/models').Company;
 
 describe("User", () => {
   beforeEach((done) => {

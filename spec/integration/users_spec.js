@@ -2,6 +2,7 @@ const request = require("request");
 const server = require("../../src/server");
 const base = "http://localhost:3000/admin/users/";
 const User = require("../../src/db/models").User;
+const Company = require("../../src/db/models").Company;
 const sequelize = require("../../src/db/models/index").sequelize;
 
 describe("routes : users", () => {

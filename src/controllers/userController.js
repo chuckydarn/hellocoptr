@@ -20,7 +20,7 @@ module.exports = {
         res.redirect("/admin/users/sign_up");
       } else {
         passport.authenticate("local")(req, res, () => {
-          res.redirect("/admin/dashboard");
+          res.redirect("/admin/company/sign_up");
         })
       }
     });
@@ -37,7 +37,7 @@ module.exports = {
         res.redirect("/admin/users/sign_in");
       } else {
         req.flash("notice", "You've successfully signed in!");
-        res.redirect("/admin/dashboard");
+        res.redirect("/admin");
       }
     })
   },
