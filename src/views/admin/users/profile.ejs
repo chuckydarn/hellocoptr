@@ -7,8 +7,8 @@
     <% include ../../static/partials/navbar.ejs %>
 
     <main class="dashboard-pages">
-      <h1><%= company.name %></h1>
-      <a href="/admin/company/<%= company.id %>/edit" class="button button-primary">edit</a>
+      <h1><%= currentUser.firstName %> <%= currentUser.lastName %></h1>
+      <p><%= currentUser.email %></p>
     </main>
   </body>
 </html>

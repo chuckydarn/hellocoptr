@@ -134,6 +134,10 @@ a {
   max-width: 400px;
 }
 
+#company-create {
+  width: 100vw;
+}
+
 /* End signup and signin */
 
 /* Forms */
@@ -247,6 +251,13 @@ a {
 }
 
 /* End dashboard */
+
+/* Dashboard pages */
+
+.dashboard-pages {
+  margin: 48px;
+}
+/* End dashboard pages */
 
 /* Buttons */
 
