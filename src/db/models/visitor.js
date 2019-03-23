@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Employee = sequelize.define('Employee', {
+  var Visitor = sequelize.define('Visitor', {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    company: {
+      type: DataTypes.STRING
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,22 +19,29 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: {msg: "must be a valid email"}
       }
     },
+    phone: {
+      type: DataTypes.STRING
+    },
     companyId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    employeeId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
   }, {});
-  Employee.associate = function(models) {
+  Visitor.associate = function(models) {
     // associations can be defined here
-    Employee.belongsTo(models.Company, {
+    Visitor.belongsTo(models.Company, {
       foreignKey: "companyId",
       onDelete: "CASCADE"
     });
 
-    Employee.hasMany(models.Visitor, {
+    Visitor.belongsTo(models.Employee, {
       foreignKey: "employeeId",
-      as: "visitors"
+      onDelete: "CASCADE"
     });
   };
-  return Employee;
+  return Visitor;
 };
