@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../../static/partials/navbar.ejs %>
+
+    <main class="dashboard-pages">
+      <h1><%= employee.firstName %> <%= employee.lastName %></h1>
+      <p><%= employee.email %></p>
+      <div class="dual-buttons">
+        <a href="/admin/employees/<%= employee.id %>/edit" class="button button-primary">edit</a>
+        <form action="/admin/employees/<%= employee.id %>/destroy" method="post">
+          <button type="submit" class="button button-secondary button-delete">delete</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

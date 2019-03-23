@@ -257,6 +257,15 @@ a {
 .dashboard-pages {
   margin: 48px;
 }
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-item {
+  margin-top: 12px;
+}
 /* End dashboard pages */
 
 /* Buttons */
@@ -287,6 +296,18 @@ a {
 
 .button-primary {
   background-color: var(--yellow);
+}
+
+.button-secondary {
+  background-color: var(--orange);
+}
+
+.button-delete {
+  margin-left: 12px;
+}
+
+.dual-buttons {
+  display: flex;
 }
 
 .signup-submit {

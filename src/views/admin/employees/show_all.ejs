@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../../static/partials/navbar.ejs %>
+
+    <main class="dashboard-pages">
+      <h1>Your Employees</h1>
+      <a href="/admin/employees/new" class="button button-primary">add</a>
+      <ul class="list">
+        <% employees.forEach((employee) => { %>
+          <li class="list-item">
+            <a href="/admin/employees/<%= employee.id %>"> <%= employee.firstName %> <%= employee.lastName %> </a>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

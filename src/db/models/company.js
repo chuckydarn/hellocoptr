@@ -17,6 +17,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "users"
     });
 
+    Company.hasMany(models.Employee, {
+      foreignKey: "companyId",
+      as: "employees"
+    });
+
     Company.afterCreate((company, callback) => {
       return models.User.update({
         companyId: company.id

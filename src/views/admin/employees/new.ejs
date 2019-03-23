@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../../static/partials/navbar.ejs %>
+
+    <main class="dashboard-pages">
+      <h1>Add New Employee</h1>
+      <form action="/admin/employees/create" method="post" class="signup-form">
+
+        <% include ../../static/partials/messages.ejs %>
+
+        <div class="text-input">
+          <input type="text" name="firstName" id="firstName" required>
+          <label for="firstName">first name</label>
+        </div>
+
+        <div class="text-input">
+          <input type="text" name="lastName" id="lastName" required>
+          <label for="lastName">last name</label>
+        </div>
+
+        <div class="text-input">
+          <input type="email" name="email" id="email" required>
+          <label for="email">email</label>
+        </div>
+
+        <button type="submit" class="button button-primary signup-submit">add</button>
+      </form>
+    </main>
+  </body>
+</html>
