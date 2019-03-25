@@ -2,6 +2,9 @@ const companyQueries = require("../db/queries.companies.js");
 
 module.exports = {
   signUp(req, res, next){
+    if(!req.user) {
+      res.redirect("/admin/users/sign_in");
+    }
     res.render("admin/company/sign_up");
   },
 
@@ -21,6 +24,9 @@ module.exports = {
   },
 
   show(req, res, next) {
+    if(!req.user) {
+      res.redirect("/admin/users/sign_in");
+    }
     companyQueries.getCompany(req.params.id, (err, company) => {
       if(err || company == null) {
         res.redirect(404, "/admin");
@@ -31,6 +37,9 @@ module.exports = {
   },
 
   edit(req, res, next) {
+    if(!req.user) {
+      res.redirect("/admin/users/sign_in");
+    }
     companyQueries.getCompany(req.params.id, (err, company) => {
       if(err || company == null) {
         res.redirect(404, "/admin");

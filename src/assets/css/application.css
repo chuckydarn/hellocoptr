@@ -85,7 +85,15 @@ a {
 }
 
 .nav-items li {
-  padding-left: 12px;
+  padding: 0 12px;
+}
+
+.nav-items li:first-child {
+  padding-left: 0;
+}
+
+.nav-items li:last-child {
+  padding-right: 0;
 }
 
 .nav-items a:hover {
@@ -206,6 +214,10 @@ a {
   color: rgba(0, 0, 0, 0.6);
 }
 
+.required {
+  color: var(--orange);
+}
+
 /* End forms */
 
 /* Dashboard */
@@ -250,6 +262,16 @@ a {
   transform: translateY(-2px);
 }
 
+.checkin-link {
+  text-decoration: underline;
+  margin-top: 24px;
+}
+
+.checkin-link:hover {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
 /* End dashboard */
 
 /* Dashboard pages */
@@ -266,6 +288,7 @@ a {
 .list-item {
   margin-top: 12px;
 }
+
 /* End dashboard pages */
 
 /* Buttons */
@@ -315,3 +338,48 @@ a {
 }
 
 /* End Buttons */
+
+/* Tables */
+.table {
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+}
+
+.table thead tr th {
+  background-color: lightgray;
+  border: solid 1px rgba(0,0,0,0.15);
+  border-top: none;
+  border-bottom: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.table thead tr th:first-child {
+  border-left-color: lightgray;
+}
+
+.table thead tr th:last-child {
+  border-right-color: lightgray;
+}
+
+.table tbody tr td {
+  border-bottom: solid 1px lightgray;
+  border-left: solid 1px lightgray;
+}
+
+.table tbody tr td:last-child {
+  border-right: solid 1px lightgray;
+}
+
+.table tbody tr:hover td {
+  background-color: rgba(0,0,0,0.05);
+}
+/* End tables */

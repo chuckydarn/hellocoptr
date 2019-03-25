@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+
+    <main>
+      <h1>Check In</h1>
+      <form action="/checkin/visitors/create" method="post" class="signup-form">
+
+        <% include ../static/partials/messages.ejs %>
+
+        <div class="text-input">
+          <input type="text" name="firstName" id="firstName" required>
+          <label for="firstName">first name <span class="required">*</span></label>
+        </div>
+
+        <div class="text-input">
+          <input type="text" name="lastName" id="lastName" required>
+          <label for="lastName">last name <span class="required">*</span></label>
+        </div>
+
+        <div class="text-input">
+          <input type="text" name="company" id="company">
+          <label for="company">company</label>
+        </div>
+
+        <div class="text-input">
+          <input type="email" name="email" id="email" required>
+          <label for="email">email <span class="required">*</span></label>
+        </div>
+
+        <div class="text-input">
+          <input type="tel" name="phone" id="phone">
+          <label for="phone">phone number</label>
+        </div>
+
+        <div class="text-input">
+          <input type="text" name="employee" id="employee" list="employees-list" required>
+          <label for="employee">who are you here to see? <span class="required">*</span></label>
+          <datalist id="employees-list">
+            <% employees.forEach((employee) => { %>
+              <option data-value="<%= employee.id %>"><%= employee.firstName %> <%= employee.lastName %></option>
+            <% }) %>
+          </datalist>
+          <input type="hidden" name="employeeId" id="employee-hidden">
+        </div>
+
+        <small class="required">* required</small>
+        <br />
+
+        <button type="submit" class="button button-primary signup-submit">check in</button>
+      </form>
+    </main>
+
+    <script>
+      document.querySelector('input[list]').addEventListener('input', function(e) {
+        var input = e.target,
+          list = input.getAttribute('list'),
+          options = document.querySelectorAll('#' + list + ' option'),
+          hiddenInput = document.getElementById(input.id + '-hidden'),
+          inputValue = input.value;
+
+        hiddenInput.value = inputValue;
+
+        for(var i = 0; i < options.length; i++) {
+          var option = options[i];
+
+          if(option.innerText === inputValue) {
+            hiddenInput.value = option.getAttribute('data-value');
+            break;
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>

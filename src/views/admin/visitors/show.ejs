@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../../static/partials/navbar.ejs %>
+
+    <main class="dashboard-pages">
+      <h1>Your Visitors</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Visitor Name</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Employee Visited</th>
+            <th>Date of Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% visitors.forEach((visitor) => { %>
+            <tr>
+              <td>
+                <%= visitor.firstName %> <%= visitor.lastName %>
+              </td>
+              <td>
+                <%= visitor.company %>
+              </td>
+              <td>
+                <%= visitor.email %>
+              </td>
+              <td>
+                <%= visitor.phone %>
+              </td>
+              <td>
+                <%= visitor.employee %>
+              </td>
+              <td class="date">
+                <%= visitor.createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '') %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody
+      </table>
+    </main>
+  </body>
+</html>
