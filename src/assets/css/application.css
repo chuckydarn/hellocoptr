@@ -122,6 +122,14 @@ a {
   justify-content: center;
 }
 
+.checkin-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Signup and Signin */
 
 .sidebar {
@@ -142,7 +150,7 @@ a {
   max-width: 400px;
 }
 
-#company-create {
+.full-page-form {
   width: 100vw;
 }
 
@@ -216,6 +224,8 @@ a {
 
 .required {
   color: var(--orange);
+  text-align: right;
+  font-size: 12px;
 }
 
 /* End forms */

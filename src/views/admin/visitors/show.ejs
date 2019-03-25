@@ -35,7 +35,7 @@
                 <%= visitor.phone %>
               </td>
               <td>
-                <%= visitor.employee %>
+                <%= visitor.Employee.firstName %> <%= visitor.Employee.lastName %>
               </td>
               <td class="date">
                 <%= visitor.createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '') %>
