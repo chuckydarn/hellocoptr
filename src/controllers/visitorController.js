@@ -71,6 +71,7 @@ module.exports = {
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               res.redirect(500, "/checkin/form");
+              console.log(error);
             } else {
               res.redirect(303, "/checkin/success");
             }
