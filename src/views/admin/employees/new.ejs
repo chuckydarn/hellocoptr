@@ -12,17 +12,17 @@
 
         <% include ../../static/partials/messages.ejs %>
 
-        <div class="text-input">
+        <div class="input-group">
           <input type="text" name="firstName" id="firstName" required>
           <label for="firstName">first name</label>
         </div>
 
-        <div class="text-input">
+        <div class="input-group">
           <input type="text" name="lastName" id="lastName" required>
           <label for="lastName">last name</label>
         </div>
 
-        <div class="text-input">
+        <div class="input-group">
           <input type="email" name="email" id="email" required>
           <label for="email">email</label>
         </div>
@@ -30,5 +30,8 @@
         <button type="submit" class="button button-primary signup-submit">add</button>
       </form>
     </main>
+
+    <% include ../../static/partials/form_scripts.ejs %>
+    
   </body>
 </html>

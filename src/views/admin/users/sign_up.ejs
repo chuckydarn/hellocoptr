@@ -17,22 +17,22 @@
 
         <form action="/admin/users" method="post" class="signup-form">
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="firstName" id="firstName" required>
             <label for="firstName">first name</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="lastName" id="lastName" required>
             <label for="lastName">last name</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="email" name="email" id="email" required>
             <label for="email">email</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="password" name="password" id="password" required>
             <label for="password">password</label>
             <small>password must be at least 6 characters</small>
@@ -44,6 +44,8 @@
       </div>
 
     </main>
+
+    <% include ../../static/partials/form_scripts.ejs %>
 
   </body>
 </html>

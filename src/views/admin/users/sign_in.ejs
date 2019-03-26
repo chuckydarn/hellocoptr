@@ -14,12 +14,12 @@
 
           <% include ../../static/partials/messages.ejs %>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="email" name="email" id="email" required>
             <label for="email">email</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="password" name="password" id="password" required>
             <label for="password">password</label>
           </div>
@@ -34,6 +34,8 @@
         <a class="button button-primary" href="/admin/users/sign_up">sign up</a>
       </div>
     </main>
+
+    <% include ../../static/partials/form_scripts.ejs %>
 
   </body>
 </html>

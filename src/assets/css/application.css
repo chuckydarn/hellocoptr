@@ -163,14 +163,14 @@ a {
   max-width: 400px;
 }
 
-.text-input {
+.input-group {
   position: relative;
   width: 100%;
   margin-bottom: 12px;
   text-align: left;
 }
 
-.text-input input {
+.input-group input {
   width: 100%;
   border: none;
   border-radius: 4px;
@@ -182,11 +182,11 @@ a {
   box-sizing: border-box;
 }
 
-.text-input input:hover {
+.input-group input:hover {
   box-shadow: 0 8px 28px rgba(33, 41, 49, 0.14);
 }
 
-.text-input label {
+.input-group label {
   position: absolute;
   text-transform: uppercase;
   font-size: 12px;
@@ -196,26 +196,26 @@ a {
   transition: var(--ease-in-out);
 }
 
-.text-input input:focus,
-.text-input input:valid {
+.input-group input:focus,
+.input-group input.has-text {
   padding: 18px 12px 6px 12px;
 }
 
-.text-input input:focus {
+.input-group input:focus {
   outline: none;
 }
 
-.text-input input:focus + label,
-.text-input input:valid + label {
+.input-group input:focus + label,
+.input-group input.has-text + label {
   font-size: 10px;
   transform: translateY(-90%);
 }
 
-.text-input input:focus + label {
+.input-group input:focus + label {
   color: var(--orange);
 }
 
-.text-input small {
+.input-group small {
   margin-left: 12px;
   margin-top: 4px;
   display: block;

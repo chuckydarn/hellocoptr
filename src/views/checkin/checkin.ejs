@@ -12,32 +12,32 @@
 
           <% include ../static/partials/messages.ejs %>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="firstName" id="firstName" required>
             <label for="firstName">first name <span class="required">*</span></label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="lastName" id="lastName" required>
             <label for="lastName">last name <span class="required">*</span></label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="company" id="company">
             <label for="company">company</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="email" name="email" id="email" required>
             <label for="email">email <span class="required">*</span></label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="tel" name="phone" id="phone">
             <label for="phone">phone number</label>
           </div>
 
-          <div class="text-input">
+          <div class="input-group">
             <input type="text" name="employee" id="employee" list="employees-list" required>
             <label for="employee">who are you here to see? <span class="required">*</span></label>
             <datalist id="employees-list">
@@ -75,6 +75,8 @@
         }
       });
     </script>
+
+    <% include ../static/partials/form_scripts.ejs %>
 
   </body>
 </html>

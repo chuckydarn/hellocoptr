@@ -1,0 +1,27 @@
+<script>
+  function checkInput(e) {
+    let val = e.target.value;
+
+    if(val) {
+      e.target.classList.add("has-text");
+    } else {
+      e.target.classList.remove("has-text");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const inputGroup = document.querySelectorAll(".input-group");
+
+    for(let i = 0; i<inputGroup.length; i++) {
+      let input = inputGroup[i].querySelector("input");
+
+      if(input.value) {
+        input.classList.add("has-text")
+      };
+
+      input.addEventListener("blur", (e) => {
+        checkInput(e);
+      })
+    }
+  });
+</script>
