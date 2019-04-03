@@ -1,5 +1,6 @@
 const Company = require("./models").Company;
 const Employee = require("./models").Employee;
+const Visitor = require("./models").Visitor;
 
 module.exports = {
   getAllEmployees(id, callback) {
@@ -37,8 +38,14 @@ module.exports = {
   },
 
   getEmployee(id, callback) {
-    return Employee.findById(id)
+    return Employee.findById(id, {
+      include: [{
+        model: Visitor,
+        as: "visitors"
+      }]
+    })
     .then((employee) => {
+      console.log(employee);
       callback(null, employee);
     })
     .catch((err) => {

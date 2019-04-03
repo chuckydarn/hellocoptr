@@ -9,13 +9,31 @@
     <main class="dashboard-pages">
       <h1>Your Employees</h1>
       <a href="/admin/employees/new" class="button button-primary">add</a>
-      <ul class="list">
-        <% employees.forEach((employee) => { %>
-          <li class="list-item">
-            <a href="/admin/employees/<%= employee.id %>"> <%= employee.firstName %> <%= employee.lastName %> </a>
-          </li>
-        <% }) %>
-      </ul>
+      <table class="employee-table table">
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% employees.forEach((employee) => { %>
+            <tr class="employee-row">
+              <td>
+                <a href="/admin/employees/<%= employee.id %>"> <%= employee.firstName %> <%= employee.lastName %> </a>
+              </td>
+              <td>
+                <div class="employee-cell">
+                  <a href="/admin/employees/<%= employee.id %>"> <%= employee.email %> </a>
+                  <form action="/admin/employees/<%= employee.id %>/destroy" method="post">
+                    <button type="submit" class="button-secondary button-delete button-small hover-button">x</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody
+      </table>
     </main>
   </body>
 </html>

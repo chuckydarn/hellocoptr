@@ -38,7 +38,7 @@
                 <%= visitor.Employee.firstName %> <%= visitor.Employee.lastName %>
               </td>
               <td class="date">
-                <%= visitor.createdAt.toISOString().replace(/T/, ' ').replace(/\..+/, '') %>
+                <%= new Date(visitor.createdAt).toString().slice(0, 25) %>
               </td>
             </tr>
           <% }) %>

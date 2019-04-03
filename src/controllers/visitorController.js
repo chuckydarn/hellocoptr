@@ -2,7 +2,9 @@ const visitorQueries = require("../db/queries.visitors.js");
 const employeeQueries = require("../db/queries.employees.js");
 const companyQueries = require("../db/queries.companies.js");
 const Employee = require("../db/models").Employee;
-const nodemailer = require("nodemailer");
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = {
   index(req, res, next) {
@@ -44,37 +46,25 @@ module.exports = {
 
     Employee.findById(req.body.employeeId)
     .then((employee) => {
-      let mailOptions = {
-        from: 'notifications@hellocoptr.com',
+      const msg = {
         to: employee.email,
+        from: 'notifications@hellocoptr.com',
         subject: 'Your guest has arrived!',
         html: `<p>Hi ${req.body.employee},<br> ${req.body.firstName} ${req.body.lastName} is here to see you.</p>`
       };
-
-      let transporter = nodemailer.createTransport({
-        host: 'mail.hellocoptr.com',
-        port: 26,
-        secure: false,
-        auth: {
-          user: 'notifications@hellocoptr.com',
-          pass: process.env.pwd
-        },
-        tls: {
-          rejectUnauthorized:false
-        }
-      });
 
       visitorQueries.addVisitor(newVisitor, (err, visitor) => {
         if(err) {
           res.redirect(500, "/checkin/form");
         } else {
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              res.redirect(500, "/checkin/form");
-            } else {
-              res.redirect(303, "/checkin/success");
-            }
+          sgMail.send(msg)
+          .then(() => {
+            res.redirect(303, "/checkin/success");
+          })
+          .catch((err) => {
+            console.log(err);
           });
+          res.redirect(303, "/checkin/success");
         }
       });
     })

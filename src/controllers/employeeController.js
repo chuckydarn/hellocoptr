@@ -33,7 +33,7 @@ module.exports = {
       if(err) {
         res.redirect(500, "/admin/employees/new");
       } else {
-        res.redirect(303, `/admin/employees/${employee.id}`);
+        res.redirect(303, `/admin/employees`);
       }
     });
   },

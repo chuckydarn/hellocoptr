@@ -7,6 +7,7 @@
     <% include ../../static/partials/navbar.ejs %>
 
     <main class="dashboard-pages">
+      <a href="/admin/employees" class="back-link">< back to all employees</a>
       <h1><%= employee.firstName %> <%= employee.lastName %></h1>
       <p><%= employee.email %></p>
       <div class="dual-buttons">
@@ -15,6 +16,39 @@
           <button type="submit" class="button button-secondary button-delete">delete</button>
         </form>
       </div>
+
+      <table class="employee-table table">
+        <thead>
+          <tr>
+            <th>Visitor Name</th>
+            <th>Company</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Date of Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% employee.visitors.forEach((visitor) => { %>
+            <tr>
+              <td>
+                <%= visitor.firstName %> <%= visitor.lastName %>
+              </td>
+              <td>
+                <%= visitor.company %>
+              </td>
+              <td>
+                <%= visitor.email %>
+              </td>
+              <td>
+                <%= visitor.phone %>
+              </td>
+              <td class="date">
+                <%= new Date(visitor.createdAt).toString().slice(0, 25) %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
     </main>
   </body>
 </html>
