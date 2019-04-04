@@ -14,7 +14,7 @@ module.exports = {
     })
     .then((company) => {
       var visitors = company.visitors;
-      console.log(visitors[0].Employee);
+      console.log(visitors[0].Employee.firstName);
       return visitors;
     })
     .then((visitors) => {
