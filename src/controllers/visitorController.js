@@ -13,7 +13,7 @@ module.exports = {
     }
     visitorQueries.getAllVisitors(req.user.companyId, (err, visitors) => {
       if(err){
-        res.redirect(404, "/admin");
+        res.redirect("/admin");
       } else {
         res.render("admin/visitors/show", {visitors});
       }
