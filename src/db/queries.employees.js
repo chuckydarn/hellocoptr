@@ -45,7 +45,6 @@ module.exports = {
       }]
     })
     .then((employee) => {
-      console.log(employee);
       callback(null, employee);
     })
     .catch((err) => {

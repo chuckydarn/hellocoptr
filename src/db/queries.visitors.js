@@ -14,6 +14,7 @@ module.exports = {
     })
     .then((company) => {
       var visitors = company.visitors;
+      console.log(visitors);
       return visitors;
     })
     .then((visitors) => {
